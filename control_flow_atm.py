@@ -6,8 +6,7 @@ user = "Amara"
 balance = int(1000)
 pin = int(2345)
 new_bal = []
-new_savings = []
-bal_update = []
+
 
 def account(user):
 
@@ -22,12 +21,14 @@ def account(user):
 
 
 def display_bal():
-    print("Your account balance is: ", new_bal[0])
+    print("Your account balance is: ", balance)
 
 def savings():
     savings = int(input("How much would you like to save? "))
     saved_amt = balance + savings
-    bal_update[0].append(saved_amt)
+    new_bal.append(saved_amt)
+    print("\nSaved Successfully")
+    print("\n Your current balance is:", new_bal[0])
 
 def account_withdrawal(balance, new_bal):
     withdraw = int(input("\nHow much would you like to withdraw: \n"))
@@ -44,11 +45,10 @@ def main_operations():
     x = int(input("\npress 1 to login and 2 to exit: \n"))
     if x == 1:
         account(user)
-        inp = int(input("\nPress 1 for Savings, 3 to check balance or 2 to Withdraw: \n"))
+        display_bal()
+        inp = int(input("\nPress 1 for Savings or 2 to Withdraw: \n"))
         if inp == 1:
             savings()
-        elif inp == 3:
-            display_bal()
         else:
             account_withdrawal(balance, new_bal)
 
