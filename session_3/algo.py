@@ -47,6 +47,7 @@ def mammal_list(animals):
     for animal in animals:
         if animal["group"] == "mammal":
             result.append(animal)
+
     return result
 
 mml = mammal_list(animals)
