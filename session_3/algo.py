@@ -12,14 +12,13 @@ animals = [
     {"name": "blue whale", "group": "mammal", "weight": 300000},
     {"name": "lion", "group": "mammal", "weight": 350}
 ]
-""""""
+
 
 # Print out all the animals names that are heavier than 100 pounds!
 
 #def heavy_animals(animals):
-    for animal in animals:
-        if animal["weight"] > 100:
-            print(animal["name"])
+    #for animal in animals:
+      #       print(animal["name"])
 
 
 #animal_names_heavier_than_100 = heavy_animals(animals)
@@ -29,14 +28,26 @@ animals = [
 
 # Print out the heaviest animal!
 def heaviest_animal(animals):
-    heaviest_animal = animals[2]
-    print(heaviest_animal)
-
+    heaviest_animal = None
     for animal in animals:
-        if animal["weight"] > heaviest_animal["weight"]:
+        if heaviest_animal is None or animal["weight"] > heaviest_animal["weight"]:
             heaviest_animal = animal
+    return heaviest_animal["name"]
 
 
 heaviest_animal = heaviest_animal(animals)
 
 print(heaviest_animal)
+
+
+# Print out all mammals as a list!
+
+def mammal_list(animals):
+    result = []
+    for animal in animals:
+        if animal["group"] == "mammal":
+            result.append(animal)
+    return result
+
+mml = mammal_list(animals)
+print("\n\n",mml)
