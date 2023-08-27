@@ -302,4 +302,34 @@ def cost_comparism(employees):
         print("\nProduct department is Bigger with: {}".format(total_prd_dept_salary))
 
 
-cost_comparism(employees)
+#cost_comparism(employees)
+
+# What is the average salary for people over 30 years of age?
+
+def avrage_salary_of_people_over_30(employees):
+    av_salary = 0
+    nos_of_employees_over_30 = 0
+    for item in employees:
+        if item["age"] >= 30:
+            av_salary += item["salary"]
+            nos_of_employees_over_30 += 1
+            result = av_salary / nos_of_employees_over_30
+
+    return result
+
+print(avrage_salary_of_people_over_30(employees))
+
+#Create a new dict and calculate how many people are in the company with the same job title
+
+def similar_job_title(employees):
+    similar_job_title = {}
+    for item in employees:
+        if item["job_title"] in similar_job_title:
+            similar_job_title[item["job_title"]] += 1
+        else:
+            similar_job_title[item["job_title"]] = 1
+    return similar_job_title
+            
+
+
+print(similar_job_title(employees))
