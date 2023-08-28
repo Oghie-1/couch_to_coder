@@ -12,10 +12,3 @@ def safe_print_list(my_list=[], x=0):
     except IndexError:
         print()
         return count
-
-my_list = [1,2,3]
-
-result = safe_print_list(my_list, 5)
-
-
-print(result)
